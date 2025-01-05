@@ -144,4 +144,20 @@ class ForwardLinkedTest {
         assertThat(second.next()).isEqualTo(2);
         assertThat(second.hasNext()).isFalse();
     }
+
+    @Test
+    void whenHeadIsNullThenAddFirst() {
+        ForwardLinked<Integer> list = new ForwardLinked<>();
+        list.addFirst(1);
+        assertThat(list.get(0)).isEqualTo(1);
+    }
+
+    @Test
+    void whenAddFirstThenFirstIs3() {
+        ForwardLinked<Integer> list = new ForwardLinked<>();
+        list.add(1);
+        list.add(2);
+        list.addFirst(3);
+        assertThat(list.get(0)).isEqualTo(3);
+    }
 }
