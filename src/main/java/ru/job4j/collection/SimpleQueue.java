@@ -9,7 +9,9 @@ public class SimpleQueue<T> {
     private int outputSize = 0;
 
     public T poll() {
-        T result;
+        if (inputSize == 0 && outputSize == 0) {
+            throw new NoSuchElementException("Queue is empty");
+        }
         if (inputSize > 0) {
             for (int i = 0; i < inputSize; i++) {
                 output.push(input.pop());
@@ -17,13 +19,8 @@ public class SimpleQueue<T> {
             }
             inputSize = 0;
         }
-        try {
-            result = output.pop();
-            outputSize--;
-        } catch (NoSuchElementException e) {
-            throw new NoSuchElementException("Queue is empty");
-        }
-        return result;
+        outputSize--;
+        return output.pop();
     }
 
     public void push(T value) {
