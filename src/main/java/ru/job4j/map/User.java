@@ -15,6 +15,9 @@ public class User {
                 "name=" + name +
                 ", children=" + children +
                 ", birthday=" + birthday.getTime() +
+                ", hashcode=" + this.hashCode() +
+                ", hash=" + (this.hashCode() ^ (hashCode() >>> 16)) +
+                ", bucket=" +(this.hashCode() ^ (hashCode() >>> 16)) % 15 +
                 '}';
     }
 
