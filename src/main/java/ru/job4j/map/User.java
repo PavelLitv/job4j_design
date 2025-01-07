@@ -12,14 +12,14 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "name=" + name +
-                ", children=" + children +
-                ", birthday=" + birthday.getTime() +
-                ", hashcode=" + this.hashCode() +
-                ", hash=" + (this.hashCode() ^ (hashCode() >>> 16)) +
-                ", bucket=" +(this.hashCode() ^ (hashCode() >>> 16)) % 15 +
-                '}';
+        return "User{"
+                + "name=" + name
+                + ", children=" + children
+                + ", birthday=" + birthday.getTime()
+                + ", hashcode=" + this.hashCode()
+                + ", hash=" + (this.hashCode() ^ (hashCode() >>> 16))
+                + ", bucket=" + (this.hashCode() ^ (hashCode() >>> 16)) % 16
+                + '}';
     }
 
     public User(String name, int children, Calendar birthday) {
@@ -44,8 +44,12 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         User user = (User) o;
         return children == user.children && Objects.equals(name, user.name) && Objects.equals(birthday, user.birthday);
     }
