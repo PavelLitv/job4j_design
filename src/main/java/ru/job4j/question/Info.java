@@ -54,4 +54,13 @@ public class Info {
     public int hashCode() {
         return Objects.hash(added, changed, deleted);
     }
+
+    @Override
+    public String toString() {
+        return "Info{"
+                + "added=" + added
+                + ", changed=" + changed
+                + ", deleted=" + deleted
+                + '}';
+    }
 }
