@@ -11,8 +11,8 @@ import java.util.function.Predicate;
 import static java.nio.file.FileVisitResult.CONTINUE;
 
 public class SearchFiles implements FileVisitor<Path> {
-    ArrayList<Path> paths = new ArrayList<>();
-    Predicate<Path> filter;
+    private ArrayList<Path> paths = new ArrayList<>();
+    private Predicate<Path> filter;
 
     public SearchFiles(Predicate<Path> filter) {
         this.filter = filter;
