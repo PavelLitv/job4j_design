@@ -19,9 +19,9 @@ public class EchoServer {
                              new InputStreamReader(socket.getInputStream()))) {
                     String requestLine = input.readLine();
                     String param = getParam(requestLine);
-                    if (param.equals("Hello")) {
+                    if ("Hello".equals(param)) {
                         output.write(("HTTP/1.1 200 OK\r\n\r\n" + "Hello, dear friend.").getBytes());
-                    } else if (param.equals("Exit")) {
+                    } else if ("Exit".equals(param)) {
                         output.write(("HTTP/1.1 200 OK\r\n\r\n" + "Goodbye, dear friend.").getBytes());
                         server.close();
                     } else {
