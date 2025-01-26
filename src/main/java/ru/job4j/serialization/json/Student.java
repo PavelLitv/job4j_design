@@ -1,13 +1,26 @@
 package ru.job4j.serialization.json;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.Arrays;
 
+@XmlRootElement(name = "student")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Student {
+    @XmlAttribute
     private String name;
+    @XmlAttribute
     private int course;
+    @XmlElementWrapper(name = "subjectsStudy")
+    @XmlElement(name = "subject")
     private String[] subjectsStudy;
     private Address address;
+    @XmlAttribute
     private boolean isActive;
+
+    public Student() {
+
+    }
 
     public Student(String name, int course, String[] subjectsStudy, Address address, boolean isActive) {
         this.name = name;
