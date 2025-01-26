@@ -21,7 +21,7 @@ public class ConvertToJson {
                         + "\"city\": \"Omsk\","
                         + "\"index\":644000"
                         + "},"
-                        + "\"isActive\": false"
+                        + "\"active\": false"
                         + "}";
         Student studentFromStr = gson.fromJson(studentStr, Student.class);
         System.out.println(studentFromStr);

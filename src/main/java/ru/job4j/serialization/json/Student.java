@@ -16,18 +16,18 @@ public class Student {
     private String[] subjectsStudy;
     private Address address;
     @XmlAttribute
-    private boolean isActive;
+    private boolean active;
 
     public Student() {
 
     }
 
-    public Student(String name, int course, String[] subjectsStudy, Address address, boolean isActive) {
+    public Student(String name, int course, String[] subjectsStudy, Address address, boolean active) {
         this.name = name;
         this.course = course;
         this.subjectsStudy = subjectsStudy;
         this.address = address;
-        this.isActive = isActive;
+        this.active = active;
     }
 
     public String getName() {
@@ -62,12 +62,12 @@ public class Student {
         this.address = address;
     }
 
-    public boolean getIsActive() {
-        return isActive;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setActive(boolean isActive) {
-        this.isActive = isActive;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     @Override
@@ -77,7 +77,7 @@ public class Student {
                 + ", course=" + course
                 + ", subjectsStudy=" + Arrays.toString(subjectsStudy)
                 + ", address=" + address
-                + ", isActive=" + isActive
+                + ", active=" + active
                 + "}";
     }
 }

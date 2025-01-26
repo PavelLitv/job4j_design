@@ -26,7 +26,7 @@ public class ConvertByOrgJson {
         JSONObject jsonStudent = new JSONObject();
         jsonStudent.put("name", student.getName());
         jsonStudent.put("course", student.getCourse());
-        jsonStudent.put("isActive", student.getIsActive());
+        jsonStudent.put("active", student.isActive());
         jsonStudent.put("address", jsonAddress);
         jsonStudent.put("subjects", jsonSubjects);
 
