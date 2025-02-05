@@ -15,14 +15,11 @@ $$
         item_second_id      INTEGER;
 
     BEGIN
-        INSERT INTO users(name) VALUES ('Pavel') RETURNING id INTO user_pavel_id;
-        INSERT INTO users(name) VALUES ('Sergey') RETURNING id INTO user_sergey_id;
-
         INSERT INTO roles(name) VALUES ('admin') RETURNING id INTO role_admin_id;
         INSERT INTO roles(name) VALUES ('user') RETURNING id INTO role_user_id;
 
-        INSERT INTO user_role(role_id, user_id) VALUES (role_admin_id, user_pavel_id);
-        INSERT INTO user_role(role_id, user_id) VALUES (role_user_id, user_sergey_id);
+        INSERT INTO users(name, role_id) VALUES ('Pavel', role_admin_id) RETURNING id INTO user_pavel_id;
+        INSERT INTO users(name, role_id) VALUES ('Sergey', role_user_id) RETURNING id INTO user_sergey_id;
 
         INSERT INTO rules(name) VALUES ('all') RETURNING id INTO rule_all_id;
         INSERT INTO rules(name) VALUES ('create_item') RETURNING id INTO rule_create_item_id;
