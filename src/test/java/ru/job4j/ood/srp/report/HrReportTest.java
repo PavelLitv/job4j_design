@@ -1,5 +1,6 @@
 package ru.job4j.ood.srp.report;
 
+import jakarta.xml.bind.JAXBException;
 import org.junit.jupiter.api.Test;
 import ru.job4j.ood.srp.model.Employee;
 import ru.job4j.ood.srp.store.MemoryStore;
@@ -10,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class HrReportTest {
     @Test
-    public void whenFilterBySalaryThenFilteredAndSortBySalaryDesc() {
+    public void whenFilterBySalaryThenFilteredAndSortBySalaryDesc() throws JAXBException {
         MemoryStore store = new MemoryStore();
         Calendar now = Calendar.getInstance();
         Employee worker1 = new Employee("Ivan", now, now, 100_000);
