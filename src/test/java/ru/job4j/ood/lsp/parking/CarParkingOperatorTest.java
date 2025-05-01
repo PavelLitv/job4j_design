@@ -32,8 +32,8 @@ class CarParkingOperatorTest {
     void whenCarIsParkedAndIsStillSpotThenSecondSpotIsNull() {
         Parking parking = new Parking(2, 0);
         CarParkingOperator operator = new CarParkingOperator(parking);
-        Car Car = new Car();
-        operator.park(Car);
+        Car car = new Car();
+        operator.park(car);
         assertThat(parking.getCarSpots()[1]).isNull();
 
     }
@@ -42,9 +42,9 @@ class CarParkingOperatorTest {
     void whenCarIsParkedAndNoMoreSpotsThenIsAvailableSpotsReturnsFalse() {
         Parking parking = new Parking(1, 0);
         CarParkingOperator operator = new CarParkingOperator(parking);
-        Car Car = new Car();
-        operator.park(Car);
-        boolean result = operator.isAvailableSpots(Car);
+        Car car = new Car();
+        operator.park(car);
+        boolean result = operator.isAvailableSpots(car);
         assertThat(result).isFalse();
     }
 
