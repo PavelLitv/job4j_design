@@ -2,8 +2,8 @@ package ru.job4j.ood.lsp.parking;
 
 import ru.job4j.ood.lsp.parking.vehicle.Vehicle;
 
-public interface ParkingOperator {
-    void park(Vehicle vehicle);
+public interface ParkingOperator<T extends Vehicle> {
+    void park(T vehicle);
 
-    boolean isAvailableSpots(Vehicle vehicle);
+    boolean isAvailableSpots(T vehicle);
 }

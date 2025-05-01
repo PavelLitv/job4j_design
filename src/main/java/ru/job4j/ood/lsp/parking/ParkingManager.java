@@ -11,7 +11,7 @@ public class ParkingManager {
         this.operators = operators;
     }
 
-    public void park(Vehicle vehicle, Parking parking) {
+    public void park(Vehicle vehicle) {
 
     }
 }

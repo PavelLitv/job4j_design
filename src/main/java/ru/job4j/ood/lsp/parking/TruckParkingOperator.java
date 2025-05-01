@@ -1,8 +1,8 @@
 package ru.job4j.ood.lsp.parking;
 
-import ru.job4j.ood.lsp.parking.vehicle.Vehicle;
+import ru.job4j.ood.lsp.parking.vehicle.Truck;
 
-public class TruckParkingOperator implements ParkingOperator {
+public class TruckParkingOperator implements ParkingOperator<Truck> {
     private final Parking parking;
 
     public TruckParkingOperator(Parking parking) {
@@ -10,12 +10,12 @@ public class TruckParkingOperator implements ParkingOperator {
     }
 
     @Override
-    public void park(Vehicle vehicle) {
+    public void park(Truck truck) {
 
     }
 
     @Override
-    public boolean isAvailableSpots(Vehicle vehicle) {
+    public boolean isAvailableSpots(Truck truck) {
         return false;
     }
 }

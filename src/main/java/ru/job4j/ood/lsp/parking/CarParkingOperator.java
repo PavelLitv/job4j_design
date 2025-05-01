@@ -2,7 +2,7 @@ package ru.job4j.ood.lsp.parking;
 
 import ru.job4j.ood.lsp.parking.vehicle.Vehicle;
 
-public class CarParkingOperator implements ParkingOperator {
+public class CarParkingOperator implements ParkingOperator<Vehicle> {
     private final Parking parking;
 
     public CarParkingOperator(Parking parking) {
