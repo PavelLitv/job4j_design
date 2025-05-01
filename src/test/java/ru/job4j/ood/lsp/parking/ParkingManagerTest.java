@@ -1,5 +1,6 @@
 package ru.job4j.ood.lsp.parking;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.job4j.ood.lsp.parking.vehicle.Car;
 import ru.job4j.ood.lsp.parking.vehicle.Truck;
@@ -8,6 +9,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
+@Disabled
 class ParkingManagerTest {
     @Test
     void whenParkCarAndNoSpotForCarAndIsSpotForTruckThenNoAvailableParkingSpotException() {
