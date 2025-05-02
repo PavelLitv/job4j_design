@@ -6,4 +6,6 @@ public interface ParkingOperator<T extends Vehicle> {
     void park(T vehicle);
 
     boolean isAvailableSpots(T vehicle);
+
+    boolean supports(Vehicle vehicle);
 }

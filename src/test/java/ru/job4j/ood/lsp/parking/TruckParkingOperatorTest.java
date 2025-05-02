@@ -1,20 +1,18 @@
 package ru.job4j.ood.lsp.parking;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.job4j.ood.lsp.parking.vehicle.Truck;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@Disabled
 class TruckParkingOperatorTest {
     @Test
     void whenTruckFitsInTruckSpotThenTruckSpotIsAddedTruck() {
         Parking parking = new Parking(0, 1);
         TruckParkingOperator operator = new TruckParkingOperator(parking);
         Truck truck = new Truck(2);
-        operator.isAvailableSpots(truck);
+        operator.park(truck);
         assertThat(parking.getTruckSpots()[0]).isEqualTo(truck);
     }
 

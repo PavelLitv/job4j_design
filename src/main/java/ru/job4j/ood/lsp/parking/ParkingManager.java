@@ -12,6 +12,12 @@ public class ParkingManager {
     }
 
     public void park(Vehicle vehicle) {
-
+        for (ParkingOperator operator : operators) {
+            if (operator.supports(vehicle) && operator.isAvailableSpots(vehicle)) {
+                operator.park(vehicle);
+                return;
+            }
+        }
+        throw new NoAvailableParkingSpotException("No available parking");
     }
 }

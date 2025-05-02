@@ -1,6 +1,5 @@
 package ru.job4j.ood.lsp.parking;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.job4j.ood.lsp.parking.vehicle.Car;
 import ru.job4j.ood.lsp.parking.vehicle.Truck;
@@ -8,14 +7,13 @@ import ru.job4j.ood.lsp.parking.vehicle.Truck;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@Disabled
 class CarParkingOperatorTest {
     @Test
     void whenCarFitsInCarSpotThenCarSpotsIsAddedCar() {
         Parking parking = new Parking(1, 0);
         CarParkingOperator operator = new CarParkingOperator(parking);
         Car car = new Car();
-        operator.isAvailableSpots(car);
+        operator.park(car);
         assertThat(parking.getCarSpots()[0]).isEqualTo(car);
     }
 
@@ -55,8 +53,9 @@ class CarParkingOperatorTest {
         Parking parking = new Parking(2, 0);
         CarParkingOperator operator = new CarParkingOperator(parking);
         Truck truck = new Truck(2);
-        operator.isAvailableSpots(truck);
+        operator.park(truck);
         assertThat(parking.getCarSpots()[0]).isEqualTo(truck);
+        assertThat(parking.getCarSpots()[1]).isEqualTo(truck);
     }
 
     @Test

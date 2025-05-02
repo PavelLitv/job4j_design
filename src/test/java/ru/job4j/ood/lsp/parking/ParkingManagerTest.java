@@ -1,6 +1,5 @@
 package ru.job4j.ood.lsp.parking;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.job4j.ood.lsp.parking.vehicle.Car;
 import ru.job4j.ood.lsp.parking.vehicle.Truck;
@@ -9,14 +8,13 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
-@Disabled
 class ParkingManagerTest {
     @Test
     void whenParkCarAndNoSpotForCarAndIsSpotForTruckThenNoAvailableParkingSpotException() {
         Parking parking = new Parking(0, 1);
         ParkingManager manager = new ParkingManager(List.of(
-                new CarParkingOperator(parking),
-                new TruckParkingOperator(parking)
+                new TruckParkingOperator(parking),
+                new CarParkingOperator(parking)
         ));
         assertThatThrownBy(() -> manager.park(new Car()))
                 .isInstanceOf(NoAvailableParkingSpotException.class)
@@ -42,8 +40,8 @@ class ParkingManagerTest {
     void whenTruckParkToCarSpotsThenCarSpotsIsAddedTruck() {
         Parking parking = new Parking(2, 1);
         ParkingManager manager = new ParkingManager(List.of(
-                new CarParkingOperator(parking),
-                new TruckParkingOperator(parking)
+                new TruckParkingOperator(parking),
+                new CarParkingOperator(parking)
         ));
         Truck truck = new Truck(2);
         Truck truckToCarSpots = new Truck(2);
