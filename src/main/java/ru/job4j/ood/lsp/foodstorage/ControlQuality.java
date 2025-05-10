@@ -25,4 +25,8 @@ public class ControlQuality {
         }
         foodsToSort.forEach(this::transfer);
     }
+
+    public void resort() {
+        sort();
+    }
 }
