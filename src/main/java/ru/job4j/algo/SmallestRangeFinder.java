@@ -28,11 +28,11 @@ public class SmallestRangeFinder {
                 }
                 left++;
             }
-            if(minLength == k) {
+            if (minLength == k) {
                 break;
             }
         }
-        
+
         return result;
     }
 
